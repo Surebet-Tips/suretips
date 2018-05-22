@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SureBet Tips | Login</title>
+  <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+ <div id="app">
+   <v-app light>
+    <v-content>
+      <v-toolbar color="blue lighten-2" dark>
+        <v-toolbar-title class="white--text">SureTips</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-badge right>
+         <v-icon large color="white">account_circle</v-icon>
+       </v-badge>
+      <div class="hidden-sm-and-down">
+        <v-btn flat>About</v-btn>
+         <router-link to="/contact" style="text-decoration:none;">
+          <v-btn flat>Contact</v-btn>
+        </router-link>
+        <router-link style="text-decoration:none;">
+          <v-btn
+           flat
+           href="#"
+           >Login</v-btn>
+        </router-link>
+      </div>
+    </v-toolbar>
+      <section>
+            <v-container fluid>
+                    <v-layout row wrap>
+                      <v-flex xs12 class="text-xs-center" mt-5>
+                        <h1>Login</h1>
+                      </v-flex>
+                      <v-flex xs12 sm6 offset-sm3 mt-3>
+                        <form>
+                          <v-layout column>
+                            <v-flex>
+                              <v-text-field
+                                name="email"
+                                label="Email"
+                                id="email"
+                                type="email"
+                                required></v-text-field>
+                            </v-flex>
+                            <v-flex>
+                              <v-text-field
+                                name="password"
+                                label="Password"
+                                id="password"
+                                type="password"
+                                required></v-text-field>
+                            </v-flex>
+                            <v-flex class="text-xs-center" mt-5>
+                              <v-btn color="primary" type="submit">Login</v-btn>
+                            </v-flex>
+                            <v-layout row justify-center>
+                                    <v-dialog v-model="dialog" persistent max-width="500px">
+                                      <v-btn slot="activator" color="primary" dark>Signup</v-btn>
+                                      <v-card>
+                                        <v-card-title>
+                                          <span class="headline">Sign Up</span>
+                                        </v-card-title>
+                                        <v-card-text>
+                                          <v-container grid-list-md>
+                                            <v-layout wrap>
+                                              <v-flex xs12 sm6 md4>
+                                                <v-text-field label="First name" required></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12 sm6 md4>
+                                                <v-text-field label="Middle name"></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12 sm6 md4>
+                                                <v-text-field
+                                                  label="Last name"
+                                                  persistent-hint
+                                                  required
+                                                ></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12>
+                                                <v-text-field label="Email" required></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12>
+                                                <v-text-field label="Password" type="password" required></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12>
+                                                 <v-text-field label="Confirm Password" type="password" required></v-text-field>
+                                                  </v-flex>
+                                                  
+                                        <v-flex xs12 sm6 md4>
+                                                <v-menu
+                                                ref="menu2"
+                                                :close-on-content-click="false"
+                                                v-model="menu2"
+                                                :nudge-right="40"
+                                                :return-value.sync="date"
+                                                lazy
+                                                transition="scale-transition"
+                                                offset-y
+                                                full-width
+                                                min-width="290px"
+                                                >
+                                                <v-text-field
+                                                    slot="activator"
+                                                    v-model="date"
+                                                    label="Picker without buttons"
+                                                    prepend-icon="event"
+                                                    readonly
+                                                ></v-text-field>
+                                                <v-date-picker v-model="date" @input="$refs.menu2.save(date)"></v-date-picker>
+                                        
+                                                </v-menu>
+                                            </v-flex>
+                                            </v-layout>
+                                          </v-container>
+                                          <small>*indicates required field</small>
+                                        </v-card-text>
+                                        <v-card-actions>
+                                          <v-spacer></v-spacer>
+                                          <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
+                                          <v-btn color="blue darken-1" flat @click.native="dialog = false">Sign up</v-btn>
+                                        </v-card-actions>
+                                      </v-card>
+                                    </v-dialog>
+                                  </v-layout>
+                          </v-layout>
+                        </form>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+      </section>   
+    </v-content>
+  </v-app>
+ </div>
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script>
+   new Vue({
+    el: '#app',
+    data: () => ({
+        dialog: false,
+        date: null,
+        menu: false,
+        modal: false,
+        menu2: false
+      }) 
+  })
+ </script>
+</body>
+</html>

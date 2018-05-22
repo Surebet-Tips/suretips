@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SureBet Tips | Tips</title>
+  <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+ <div id="app">
+   <v-app light>
+    <v-content>
+      <v-toolbar color="blue lighten-2" dark>
+        <v-toolbar-title class="white--text">SureTips</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-badge right>
+         <v-icon large color="white">account_circle</v-icon>
+       </v-badge>
+      <div class="hidden-sm-and-down">
+        <v-btn flat>About</v-btn>
+         <router-link to="/contact" style="text-decoration:none;">
+          <v-btn flat>Contact</v-btn>
+        </router-link>
+        <router-link style="text-decoration:none;">
+          <v-btn
+           flat
+           href="#"
+           >Login</v-btn>
+        </router-link>
+      </div>
+    </v-toolbar>
+      <section style="background-color: #4CAF50;">
+        <v-parallax height="600">
+                <v-flex xs12 sm6 offset-sm3>
+                    <v-card>
+                        <v-btn large success>Over 1.5</v-btn>
+                        <v-btn large primary>Over 2.5</v-btn>
+                        <v-btn large primary>Weekend Draws</v-btn>
+                        <v-btn large primary>VIP</v-btn>
+                    </v-card>
+                </v-flex>
+        </v-parallax>
+      </section>  
+      <v-footer class="blue lighten-2">
+            <v-layout row wrap align-center>
+              <v-flex xs12>
+                <div class="white--text ml-3">
+                   <span class="white--text" href="https://github.com/vwxyzjn">&copy; 2018 Copyright SureTips</a>
+                </div>
+              </v-flex>
+            </v-layout>
+          </v-footer> 
+    </v-content>
+  </v-app>
+ </div>
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script>
+   new Vue({
+    el: '#app',
+    data: () => ({
+      }) 
+  })
+ </script>
+</body>
+</html>
