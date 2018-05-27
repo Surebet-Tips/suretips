@@ -46,6 +46,7 @@
                                 label="Email"
                                 id="email"
                                 type="email"
+                                v-model="email"
                                 required></v-text-field>
                             </v-flex>
                             <v-flex>
@@ -73,13 +74,15 @@
                                                 <v-text-field label="First name" required></v-text-field>
                                               </v-flex>
                                               <v-flex xs12 sm6 md4>
-                                                <v-text-field label="Middle name"></v-text-field>
+                                                <v-text-field label="Last name" required></v-text-field>
                                               </v-flex>
                                               <v-flex xs12 sm6 md4>
+                                                <v-text-field label="Username" required></v-text-field>
+                                              </v-flex>
+                                              <v-flex xs12 sm6>
                                                 <v-text-field
-                                                  label="Last name"
+                                                  label="Phone number"
                                                   persistent-hint
-                                                  required
                                                 ></v-text-field>
                                               </v-flex>
                                               <v-flex xs12>
@@ -108,7 +111,7 @@
                                                 <v-text-field
                                                     slot="activator"
                                                     v-model="date"
-                                                    label="Picker without buttons"
+                                                    label="Date"
                                                     prepend-icon="event"
                                                     readonly
                                                 ></v-text-field>
@@ -137,6 +140,19 @@
     </v-content>
   </v-app>
  </div>
+ <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCFHbqOF7Ko-px0oB3hemtbY1oMEsiQK7o",
+    authDomain: "testpro-81389.firebaseapp.com",
+    databaseURL: "https://testpro-81389.firebaseio.com",
+    projectId: "testpro-81389",
+    storageBucket: "",
+    messagingSenderId: "855050866766"
+  };
+  firebase.initializeApp(config);
+</script>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
  <script>
@@ -147,9 +163,23 @@
         date: null,
         menu: false,
         modal: false,
-        menu2: false
-      }) 
-  })
+        menu2: false,
+        email: '',
+        password: ''
+      }),
+      methods: {
+        signUp: function(){
+          firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+            function(user) {
+              alert('Your account has been created!')
+            },
+            function(err) {
+              alert('Oops! ' + err.message)
+            }
+          )
+        }
+      }
+  });
  </script>
 </body>
 </html>

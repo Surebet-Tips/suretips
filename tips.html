@@ -36,10 +36,13 @@
         <v-parallax height="600">
                 <v-flex xs12 sm6 offset-sm3>
                     <v-card>
-                        <v-btn large success>Over 1.5</v-btn>
-                        <v-btn large primary>Over 2.5</v-btn>
-                        <v-btn large primary>Weekend Draws</v-btn>
-                        <v-btn large primary>VIP</v-btn>
+                        <v-btn flat primary href="/freetips">
+                          <router-link style="text-decoration: none;">
+                          Free Tips</v-btn>
+                        </router-link>
+                        <router-link style="text-decoration: none;">
+                        <v-btn flat primary href="/viptips">Vip Tips</v-btn>
+                      </router-link>
                     </v-card>
                 </v-flex>
         </v-parallax>
