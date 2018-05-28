@@ -13,21 +13,19 @@
  <div id="app">
    <v-app light>
     <v-content>
-      <v-toolbar color="blue lighten-2" dark>
+      <v-toolbar color="green" dark>
         <router-link style="text-decoration: none;">
         <v-toolbar-title class="white--text" href="./index.html">SureTips
-        </router-link>
         </v-toolbar-title>
+      </router-link>
         <v-spacer></v-spacer>
         <v-badge right>
          <span slot="badge" style="color: black;">6</span>
          <v-icon large color="white">account_circle</v-icon>
        </v-badge>
       <div class="hidden-sm-and-down">
-        <v-btn 
-        flat>About</v-btn>
-         <router-link to="/contact" style="text-decoration:none;">
-          <v-btn flat>Contact</v-btn>
+         <router-link to="./signup" style="text-decoration:none;">
+          <v-btn flat>Signup</v-btn>
         </router-link>
         <router-link style="text-decoration:none;">
           <v-btn

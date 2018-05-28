@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SureBet Tips | Login</title>
+  <title>SureBet Tips | Signup</title>
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -14,7 +14,7 @@
     <v-content>
       <v-toolbar color="green" dark>
           <router-link style="text-decoration:none;">
-        <v-toolbar-title class="white--text" href="/index.html">SureTips</v-toolbar-title>
+        <v-toolbar-title class="white--text" href="./index.html">SureTips</v-toolbar-title>
           </router-link>
         <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
@@ -31,33 +31,6 @@
     </v-toolbar>
       <section>
             <v-container fluid>
-                    <v-layout row wrap>
-                      <v-flex xs12 class="text-xs-center" mt-5>
-                        <h1>Login</h1>
-                      </v-flex>
-                      <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form>
-                          <v-layout column>
-                            <v-flex>
-                              <v-text-field
-                                name="email"
-                                label="Email"
-                                id="email"
-                                type="email"
-                                v-model="email"
-                                required></v-text-field>
-                            </v-flex>
-                            <v-flex>
-                              <v-text-field
-                                name="password"
-                                label="Password"
-                                id="password"
-                                type="password"
-                                required></v-text-field>
-                            </v-flex>
-                            <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit">Login</v-btn>
-                            </v-flex>
                             <v-layout row justify-center>
                                     <v-dialog v-model="dialog" persistent max-width="500px">
                                       <v-btn slot="activator" color="primary" dark>Signup</v-btn>
@@ -129,9 +102,6 @@
                                       </v-card>
                                     </v-dialog>
                                   </v-layout>
-                          </v-layout>
-                        </form>
-                      </v-flex>
                     </v-layout>
                   </v-container>
       </section>   
