@@ -5,21 +5,20 @@
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
 </head>
 <body>
  <div id="app">
    <v-app light>
     <v-content>
-      <v-toolbar color="blue lighten-2" dark>
-        <v-toolbar-title class="white--text">SureTips</v-toolbar-title>
+      <v-toolbar color="green" dark>
+         <router-link style="text-decoration: none;">
+              <v-btn flat href="./index.html">SureTips </v-btn>
+            </router-link>
         <v-spacer></v-spacer>
-      <div class="hidden-sm-and-down"
-         <router-link style="text-decoration:none;">
-          <v-btn flat href="./signup.html">Signup</v-btn>
-        </router-link>
+      <div class="hidden-sm-and-down">
         <router-link style="text-decoration:none;">
           <v-btn
            flat
@@ -28,22 +27,52 @@
         </router-link>
       </div>
     </v-toolbar>
-      <section style="background-color: #4CAF50;">
-        <v-parallax height="600">
-                <v-flex xs12 sm6 offset-sm3>
-                    <v-card>
-                        <v-btn flat primary href="/freetips">
-                          <router-link style="text-decoration: none;">
-                          Free Tips</v-btn>
-                        </router-link>
-                        <router-link style="text-decoration: none;">
-                        <v-btn flat primary href="/viptips">Vip Tips</v-btn>
-                      </router-link>
-                    </v-card>
-                </v-flex>
+      <section style="background-color: #81DA84;">
+         <v-container grid-list-md text-xs-center>
+           <v-parallax  height="585">  
+              <i class="fas fa-futbol fa-10x"></i>    
+             <v-layout style="margin-top: 10%; margin-left:14%;">
+            <v-flex xs6>
+            <v-card width="300" height="150">
+              <v-card-title primary-title>
+                  <h3 class="text-center">Free Tips</h3>
+              </v-card-title>
+              <v-divider></v-divider>
+              <v-card-actions>
+                <router-link style="text-decoration: none;">
+                <v-btn raised href="./over15.html" style="background-color:#7FE982">Over 1.5</v-btn>
+                </router-link>
+                <router-link style="text-decoration: none;">
+                <v-btn raised href="./over25.html" style="background-color:#7FE982">Over 2.5</v-btn>
+              </router-link>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+          <v-flex xs6>
+            <v-card width="300" height="150">
+              <v-card-title primary-title>
+                <div>
+                  <h3 class="text-center">VIP</h3>
+                </div>
+              </v-card-title>
+              <v-divider></v-divider>
+              <v-card-actions>
+               <router-link style="text-decoration: none;">
+                <v-btn raised href="./viptips.html" style="background-color:#7FE982">VIP Tips</v-btn>
+                </router-link>
+                <router-link style="text-decoration: none;">
+                <v-btn raised href="./weekend.html" style="background-color:#7FE982">Weekend Draws</v-btn>
+              </router-link>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+        </v-parallax>
+      </v-container>
+
         </v-parallax>
       </section>  
-      <v-footer class="blue lighten-2">
+      <v-footer class="green">
             <v-layout row wrap align-center>
               <v-flex xs12>
                 <div class="white--text ml-3">
