@@ -89,6 +89,10 @@
                                               <v-flex xs12>
                                                  <v-text-field label="Confirm Password" type="password" required></v-text-field>
                                                   </v-flex>
+                                                  <v-radio-group v-model="radios" :mandatory="false">
+                                                    <v-radio label="Male" value="radio-1"></v-radio>
+                                                    <v-radio label="Female" value="radio-2"></v-radio>
+                                                  </v-radio-group>
                                                   
                                         <v-flex xs12 sm6 md4>
                                                 <v-menu
@@ -103,14 +107,6 @@
                                                 full-width
                                                 min-width="290px"
                                                 >
-                                                <v-text-field
-                                                    slot="activator"
-                                                    v-model="date"
-                                                    label="Date"
-                                                    prepend-icon="event"
-                                                    readonly
-                                                ></v-text-field>
-                                                <v-date-picker v-model="date" @input="$refs.menu2.save(date)"></v-date-picker>
                                         
                                                 </v-menu>
                                             </v-flex>
@@ -156,6 +152,7 @@
     data: () => ({
         dialog: false,
         date: null,
+        radios: 'radio-1',
         menu: false,
         modal: false,
         menu2: false,
