@@ -419,6 +419,21 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.min.js"></script>
  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCIt5RbAreVzbh5v3i2pIW1zytZsS9HwgI",
+    authDomain: "d-bet-98dcf.firebaseapp.com",
+    databaseURL: "https://d-bet-98dcf.firebaseio.com",
+    projectId: "d-bet-98dcf",
+    storageBucket: "d-bet-98dcf.appspot.com",
+    messagingSenderId: "704181634415"
+  };
+  firebase.initializeApp(config);
+  let db = app.database();
+
+  let tips 
+</script>
+ <script>
    new Vue({
     el: '#app',
     data () {
