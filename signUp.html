@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SureBet Tips | Login</title>
+  <title>SureBet Tips | Register</title>
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
 </head>
 <body>
@@ -37,12 +36,64 @@
             <v-container fluid>
                     <v-layout row wrap>
                       <v-flex xs12 class="text-xs-center" mt-5>
-                        <h1 class="heading">Login</h1>
+                        <h1>Register</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form @submit.prevent="signIn">
+                        <form @submit.prevent="register">
                           <v-layout column>
-                            <v-flex>
+                                <v-flex>
+                                  <v-text-field
+                                    name="a1_firstname"
+                                    label="First Name"
+                                    id="a1_firstname"
+                                    type="name"
+                                    v-model="name"
+                                    required></v-text-field>
+                                 </v-flex>
+                                 <v-flex>
+                                        <v-text-field
+                                          name="a2_lastname"
+                                          label="Last Name"
+                                          id="a2_lastname"
+                                          type="name"
+                                          v-model="name"
+                                          required></v-text-field>
+                                       </v-flex>
+                                       <v-flex>
+                                            <v-text-field
+                                              name="a3_username"
+                                              label="User Name"
+                                              id="a3_username"
+                                              type="name"
+                                              v-model="name"
+                                              required></v-text-field>
+                                           </v-flex>
+                                           <v-flex>
+                                                <v-text-field
+                                                  name="a4_email"
+                                                  label="Email"
+                                                  id="a4_email"
+                                                  type="email"
+                                                  v-model="email"
+                                                  required></v-text-field>
+                                               </v-flex>
+                                               <v-flex>
+                                                    <v-text-field
+                                                      name="a5_phone"
+                                                      label="Phone Number"
+                                                      id="a4_phone"
+                                                      type="number"
+                                                      v-model="phone"
+                                                      required></v-text-field>
+                                                   </v-flex>
+                                               <v-flex>        
+                                                  <v-select
+                                                        :items="items"
+                                                        label="Gender"
+                                                        id="a6_gender"
+                                                   ></v-select>
+                                                </v-flex>
+                                <v-flex>
                               <v-text-field
                                 name="email"
                                 label="Email"
@@ -61,10 +112,10 @@
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              If are not a user <a href="signUp.html">register here</a>
+                              If you are registered <a href="login.html">Sign In</a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit">Login</v-btn>
+                              <v-btn color="primary" type="submit">Register</v-btn>
                             </v-flex>
                           
                           </v-layout>
@@ -96,7 +147,8 @@
     data: () => ({
         email: '',
         password: '',
-        authUser: null
+        authUser: null,
+        items: ['Male', 'Female']
       }),
       methods: {
         signIn: function(){

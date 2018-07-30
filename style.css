@@ -1,11 +1,19 @@
 body{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .about{
     text-align: justify;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin-left: 100px;
     margin-right: 100px;
     display: flex;
     font-size: 15px;
+}
+#id{
+    font-family: 'Raleway', sans-serif;
+}
+.heading{
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    display: flex;
 }
