@@ -33,7 +33,7 @@
                         <h1>Login</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form>
+                        <form @submit.prevent="signIn">
                           <v-layout column>
                             <v-flex>
                               <v-text-field
@@ -50,78 +50,13 @@
                                 label="Password"
                                 id="password"
                                 type="password"
+                                v-model="password"
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
                               <v-btn color="primary" type="submit">Login</v-btn>
                             </v-flex>
-                            <v-layout row justify-center>
-                                    <v-dialog v-model="dialog" persistent max-width="500px">
-                                      <v-btn slot="activator" color="primary" dark>Signup</v-btn>
-                                      <v-card>
-                                        <v-card-title>
-                                          <span class="headline">Sign Up</span>
-                                        </v-card-title>
-                                        <v-card-text>
-                                          <v-container grid-list-md>
-                                            <v-layout wrap>
-                                              <v-flex xs12 sm6 md4>
-                                                <v-text-field label="First name" required></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12 sm6 md4>
-                                                <v-text-field label="Last name" required></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12 sm6 md4>
-                                                <v-text-field label="Username" required></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12 sm6>
-                                                <v-text-field
-                                                  label="Phone number"
-                                                  persistent-hint
-                                                ></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12>
-                                                <v-text-field label="Email" required></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12>
-                                                <v-text-field label="Password" type="password" required></v-text-field>
-                                              </v-flex>
-                                              <v-flex xs12>
-                                                 <v-text-field label="Confirm Password" type="password" required></v-text-field>
-                                                  </v-flex>
-                                                  <v-radio-group v-model="radios" :mandatory="false">
-                                                    <v-radio label="Male" value="radio-1"></v-radio>
-                                                    <v-radio label="Female" value="radio-2"></v-radio>
-                                                  </v-radio-group>
-                                                  
-                                        <v-flex xs12 sm6 md4>
-                                                <v-menu
-                                                ref="menu2"
-                                                :close-on-content-click="false"
-                                                v-model="menu2"
-                                                :nudge-right="40"
-                                                :return-value.sync="date"
-                                                lazy
-                                                transition="scale-transition"
-                                                offset-y
-                                                full-width
-                                                min-width="290px"
-                                                >
-                                        
-                                                </v-menu>
-                                            </v-flex>
-                                            </v-layout>
-                                          </v-container>
-                                          <small>*indicates required field</small>
-                                        </v-card-text>
-                                        <v-card-actions>
-                                          <v-spacer></v-spacer>
-                                          <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
-                                          <v-btn color="blue darken-1" flat @click.native="dialog = false">Sign up</v-btn>
-                                        </v-card-actions>
-                                      </v-card>
-                                    </v-dialog>
-                                  </v-layout>
+                          
                           </v-layout>
                         </form>
                       </v-flex>
@@ -132,7 +67,9 @@
   </v-app>
  </div>
  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-<script>
+ <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script>
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCIt5RbAreVzbh5v3i2pIW1zytZsS9HwgI",
@@ -143,33 +80,27 @@
     messagingSenderId: "704181634415"
   };
   firebase.initializeApp(config);
-</script>
- <script src="https://unpkg.com/vue/dist/vue.js"></script>
- <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
- <script>
+
    new Vue({
     el: '#app',
     data: () => ({
-        dialog: false,
-        date: null,
-        radios: 'radio-1',
-        menu: false,
-        modal: false,
-        menu2: false,
         email: '',
-        password: ''
+        password: '',
+        authUser: null
       }),
       methods: {
-        signUp: function(){
-          firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-            function(user) {
-              alert('Your account has been created!')
-            },
-            function(err) {
-              alert('Oops! ' + err.message)
-            }
-          )
+        signIn: function(){
+          firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        },
+        register: function(){
+          firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        },
+        signOut: function(){
+          firebase.auth().signOut
         }
+      },
+      created () {
+        firebase.auth().onAuthStateChanged(user => {this.authUser = user})
       }
   });
  </script>
