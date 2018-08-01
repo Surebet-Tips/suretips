@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
 </head>
 <body>
@@ -153,7 +154,36 @@
     messagingSenderId: "704181634415"
   };
   firebase.initializeApp(config);
+  // Reference to Firebase database
+  const Users = firebase.database().ref("Users");
 
+  //Save a new user to the database
+  var submitUsers = function (){
+    // Get input values from each of the form elements
+    const firstname = $("a1_firstname").val();
+    const lastname = $("a2_secondname").val();
+    const username = $("a3_username").val();
+    const email = $("a4_email").val();
+    const phone = $("a5_phone").val();
+    const gender = $("a6_gender").val();
+
+// Push a new user to the database
+  User.push({
+    "firstname": firstname,
+    "lastname": lastname,
+    "username": user,
+    "email": email,
+    "phone": phone,
+    "gender": gender
+  });
+};
+
+//Load functio when user clicks on the register button
+  $(window).load(function () {
+    $("#Users").submit(submitUsers);
+  });
+
+  
    new Vue({
     el: '#app',
     data: () => ({
