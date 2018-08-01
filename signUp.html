@@ -35,6 +35,18 @@
       <section>
             <v-container fluid>
                     <v-layout row wrap>
+                        <v-layout>
+                            <v-flex xs12 sm6 offset-sm3>
+                              <v-card>
+                                <v-card-title primary-title>
+                                  <div>
+                                    <h3 class="headline mb-0">Sign in with Google</h3>
+                                    <v-btn @click="signInWithGoogle"><img src="assets/indexx.png" /></v-btn>
+                                  </div>
+                                </v-card-title>
+                              </v-card>
+                            </v-flex>
+                          </v-layout>
                       <v-flex xs12 class="text-xs-center" mt-5>
                         <h1>Register</h1>
                       </v-flex>
@@ -135,9 +147,9 @@
   var config = {
     apiKey: "AIzaSyCIt5RbAreVzbh5v3i2pIW1zytZsS9HwgI",
     authDomain: "d-bet-98dcf.firebaseapp.com",
-    databaseURL: "https://d-bet-98dcf.firebaseio.com",
-    projectId: "d-bet-98dcf",
-    storageBucket: "d-bet-98dcf.appspot.com",
+    databaseURL: "https://d-bet-98dcf-e81ed.firebaseio.com",
+    projectId: "d-bet-98dcf-e81ed",
+    storageBucket: "d-bet-98dcf-e81ed.appspot.com",
     messagingSenderId: "704181634415"
   };
   firebase.initializeApp(config);
@@ -155,10 +167,16 @@
           firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         },
         register: function(){
-          firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+          firebase.auth().createUserWithEmailAndPassword(this.firstname, this.lastname, this.username, this.email, this.phone, this.gender, this.email, this.password)
         },
         signOut: function(){
           firebase.auth().signOut
+        },
+        signInWithGoogle () {
+          const provider = new firebase.auth.GoogleAuthProvider()
+            firebase.auth().signInWithPopup(provider)
+              .catch(error => alert('🤕' + error.message))
+              .then(data => console.log(data.user, data.credential.accessToken))
         }
       },
       created () {
