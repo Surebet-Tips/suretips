@@ -46,7 +46,7 @@
                         <h1>Register</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form @submit.prevent="submitUsers" id="Users">
+                        <form @submit="submitUsers" id="Users">
                           <v-layout column>
                                 <v-flex>
                                   <v-text-field
@@ -95,7 +95,7 @@
                                                    </v-flex>
                                                <v-flex>        
                                                   <v-select
-                                                        :items="items"
+                                                        :items="gender"
                                                         label="Gender"
                                                         id="a6_gender"
                                                    ></v-select>
@@ -146,7 +146,7 @@
   var submitUsers = function (){
     // Get input values from each of the form elements
     const firstname = $("a1_firstname").val();
-    const secondname = $("a2_secondname").val();
+    const lastname = $("a2_lastname").val();
     const username = $("a3_username").val();
     const email = $("a4_email").val();
     const phone = $("a5_phone").val();
@@ -155,7 +155,7 @@
 // Push a new user to the database
   User.push({
     "firstname": a1_firstname,
-    "secondnmae": a2_lastname,
+    "lastname": a2_lastname,
     "username": a3_username,
     "email": a4_email,
     "phone": a5_phone,
@@ -163,6 +163,13 @@
   });
 };
 
+  var acceptUser = function (Users) {
+    if (User == submitUsers){
+      alert("Successfully Submitted!");
+    }else{
+      alert("You are not a user");
+    }
+  }
 //Load functio when user clicks on the register button
   $(window).load(function () {
     $("#Users").submit(submitUsers);
@@ -172,10 +179,13 @@
    new Vue({
     el: '#app',
     data: () => ({
+        firstname: '',
+        lastname: '',
+        username: '',
         email: '',
         password: '',
         authUser: null,
-        items: ['Male', 'Female']
+        gender: ['Male', 'Female']
       }),
       methods: {
         signIn: function(){
@@ -195,9 +205,7 @@
         }
       },
       created () {
-        database.ref("Users").on('child added', snapshot => this.Users.push(snapshot.val(
-
-        )))
+        Users.ref("Users").on('child added', snapshot => this.Users.push(snapshot.val()))
       }
   });
  </script>
