@@ -104,10 +104,10 @@
                 <v-flex xs12 md4>
                   <v-card>
                     <v-card-title>
-                      <div>
-                        <span class="black--text">England</span><br>
-                        <span>Premier League</span><br>
-                        <span>Chelsea VS Huddersfield</span>
+                      <div v-for="day1 in free">
+                        <span class="black--text" v-for="tips in day1"></span><br>
+                        <span v-for="tip1 in tips">{{tips1.league}}</span><br>
+                        <span v-for="tip1 in tips">{{tips1.match}}</span>
                       </div>
                     </v-card-title>
                     <v-divider></v-divider>
@@ -128,8 +128,8 @@
                               document.write(today);
                           </script>
                       </v-btn>
-                      <v-btn flat color="green">Over 1.5</v-btn>
-                      <v-btn flat color="black">1.45</v-btn>
+                      <v-btn flat color="green" v-for="tip1 in tips">{{tips1.odds}}</v-btn>
+                      <v-btn flat color="black" v-for="tip1 in tips">{{tips.tip}}</v-btn>
                       <v-btn flat color="red">Lost</v-btn>
                     </v-card-actions>
                   </v-card>
@@ -591,7 +591,7 @@
         <v-layout row wrap align-center>
           <v-flex xs12>
             <div class="white--text ml-3">
-               <span class="white--text" href="https://github.com/vwxyzjn">&copy; 2018 Copyright SureTips</a>
+               <span class="white--text" href="https://github.com/Daltimore">&copy; 2018 Copyright SureTips</a>
             </div>
           </v-flex>
         </v-layout>
@@ -602,11 +602,9 @@
  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.min.js"></script>
  <script>
   // Initialize Firebase
-  var config = {
+  const config = {
     apiKey: "AIzaSyCIt5RbAreVzbh5v3i2pIW1zytZsS9HwgI",
     authDomain: "d-bet-98dcf.firebaseapp.com",
     databaseURL: "https://d-bet-98dcf.firebaseio.com",
@@ -615,9 +613,8 @@
     messagingSenderId: "704181634415"
   };
   firebase.initializeApp(config);
-  let db = app.database();
 
-  let tips 
+const database = firebase.database()
 </script>
  <script>
    new Vue({

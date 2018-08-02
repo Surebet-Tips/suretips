@@ -31,6 +31,12 @@
            href="./signUp.html"
            >Sign Up</v-btn>
         </router-link>
+        <router-link style="text-decoration:none;">
+          <v-btn
+           flat
+           href="./about.html"
+           >About</v-btn>
+        </router-link>
       </div>
     </v-toolbar>
       <section>
@@ -52,7 +58,7 @@
                         <h1>Register</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form @submit.prevent="register">
+                        <form @submit.prevent="submitUsers" id="Users">
                           <v-layout column>
                                 <v-flex>
                                   <v-text-field
@@ -106,15 +112,6 @@
                                                         id="a6_gender"
                                                    ></v-select>
                                                 </v-flex>
-                                <v-flex>
-                              <v-text-field
-                                name="email"
-                                label="Email"
-                                id="email"
-                                type="email"
-                                v-model="email"
-                                required></v-text-field>
-                            </v-flex>
                             <v-flex>
                               <v-text-field
                                 name="password"
@@ -147,7 +144,7 @@
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCIt5RbAreVzbh5v3i2pIW1zytZsS9HwgI",
-    authDomain: "d-bet-98dcf.firebaseapp.com",
+    authDomain: "d-bet-98dcf-e81ed.firebaseapp.com",
     databaseURL: "https://d-bet-98dcf-e81ed.firebaseio.com",
     projectId: "d-bet-98dcf-e81ed",
     storageBucket: "d-bet-98dcf-e81ed.appspot.com",
@@ -161,7 +158,7 @@
   var submitUsers = function (){
     // Get input values from each of the form elements
     const firstname = $("a1_firstname").val();
-    const lastname = $("a2_secondname").val();
+    const secondname = $("a2_secondname").val();
     const username = $("a3_username").val();
     const email = $("a4_email").val();
     const phone = $("a5_phone").val();
@@ -169,12 +166,12 @@
 
 // Push a new user to the database
   User.push({
-    "firstname": firstname,
-    "lastname": lastname,
-    "username": user,
-    "email": email,
-    "phone": phone,
-    "gender": gender
+    "firstname": a1_firstname,
+    "secondnmae": a2_lastname,
+    "username": a3_username,
+    "email": a4_email,
+    "phone": a5_phone,
+    "gender": a6_gender
   });
 };
 
@@ -210,7 +207,9 @@
         }
       },
       created () {
-        firebase.auth().onAuthStateChanged(user => {this.authUser = user})
+        database.ref("Users").on('child added', snapshot => this.Users.push(snapshot.val(
+
+        )))
       }
   });
  </script>
