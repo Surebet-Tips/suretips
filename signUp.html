@@ -46,7 +46,7 @@
                         <h1>Register</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form @submit="submitUsers" id="Users">
+                        <form id="Users">
                           <v-layout column>
                                 <v-flex>
                                   <v-text-field
@@ -114,7 +114,7 @@
                               If you are registered <a href="login.html">Sign In</a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit" onclick="submitUsers">Register</v-btn>
+                              <v-btn color="primary" type="submit" v-on:click="register">Register</v-btn>
                             </v-flex>
                           
                           </v-layout>
@@ -143,12 +143,6 @@
   // Reference to Firebase database
   var Users = firebase.database().ref("Users");
 
-  //Get user  ID
-  firebase.auth().onAuthStateChanged((User) => {
-  if (User) {
-    console.log(User.uid);
-  }
-});
 
   //Save a new user to the database
   var submitUsers = function (){
@@ -170,30 +164,32 @@
     "gender": a6_gender
   });
 };
-
-//Load function when user clicks on the register button
-  $(window).load(function () {
-    $("#Users").submit(submitUsers);
-  });
-
   
    new Vue({
     el: '#app',
-    data: () => ({
+    data: () => {
+      return {
         firstname: '',
         lastname: '',
         username: '',
         email: '',
-        password: '',
-        authUser: '',
-        gender: ['Male', 'Female']
-      }),
+        phone: '',
+        gender: ["Male", "Female"]
+      }
+    },
       methods: {
         signIn: function(){
           firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         },
         register: function(){
-          firebase.auth().createUserWithEmailAndPassword(this.firstname, this.lastname, this.username, this.email, this.phone, this.gender, this.email, this.password)
+          firebase.auth().createUserWithEmailAndPassword( this.email, this.password).then(
+            function (submitUsers) {
+              alert('You have successfully registered !')
+            },
+            function (err) {
+              alert('Oops. ' + err.message)
+            }
+          )
         },
         signOut: function(){
           firebase.auth().signOut
@@ -205,9 +201,6 @@
               .then(data => console.log(data.user, data.credential.accessToken))
         }
       },
-      created () {
-        Users.ref("Users").on('child added', snapshot => this.Users.push(snapshot.val()))
-      }
   });
  </script>
 </body>
