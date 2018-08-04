@@ -90,7 +90,6 @@
                                                       label="Phone Number"
                                                       id="a4_phone"
                                                       type="number"
-                                                      v-model="number"
                                                       required></v-text-field>
                                                    </v-flex>
                                                <v-flex>        
@@ -107,14 +106,13 @@
                                 label="Password"
                                 id="password"
                                 type="password"
-                                v-model="password"
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
                               If you are registered <a href="login.html">Sign In</a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit" v-on:click="register">Register</v-btn>
+                              <v-btn color="primary" type="submit" onsubmit="writeUserData">Register</v-btn>
                             </v-flex>
                           
                           </v-layout>
@@ -142,28 +140,6 @@
   firebase.initializeApp(config);
   // Reference to Firebase database
   var Users = firebase.database().ref("Users");
-
-
-  //Save a new user to the database
-  var submitUsers = function (){
-    // Get input values from each of the form elements
-    const firstname = $("a1_firstname").val();
-    const lastname = $("a2_lastname").val();
-    const username = $("a3_username").val();
-    const email = $("a4_email").val();
-    const phone = $("a5_phone").val();
-    const gender = $("a6_gender").val();
-
-// Push a new user to the database
-  Users.push({
-    "firstname": a1_firstname,
-    "lastname": a2_lastname,
-    "username": a3_username,
-    "email": a4_email,
-    "phone": a5_phone,
-    "gender": a6_gender
-  });
-};
   
    new Vue({
     el: '#app',
@@ -173,7 +149,7 @@
         lastname: '',
         username: '',
         email: '',
-        phone: '',
+        password: '',
         gender: ["Male", "Female"]
       }
     },
@@ -182,12 +158,16 @@
           firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         },
         register: function(){
-          firebase.auth().createUserWithEmailAndPassword( this.email, this.password).then(
-            function (submitUsers) {
-              alert('You have successfully registered !')
-            },
-            function (err) {
-              alert('Oops. ' + err.message)
+          firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+            function writeUserData(userId, a1_firstname, a2_lastname, a3_username, a4_email, a5_phone, a6_gender) {
+              firebase.database().ref('Users/' + userId ).set({
+                firstname: a1_firstname,
+                lastname: a2_lastname,
+                username: a3_username,
+                email: a4_email,
+                phone: a5_phone,
+                gender: a6_gender
+              });
             }
           )
         },
