@@ -53,8 +53,8 @@
                                     name="a1_firstname"
                                     label="First Name"
                                     id="a1_firstname"
-                                    type="name"
-                                    v-model="name"
+                                    type="text"
+                                    v-model="firstname"
                                     required></v-text-field>
                                  </v-flex>
                                  <v-flex>
@@ -62,8 +62,8 @@
                                           name="a2_lastname"
                                           label="Last Name"
                                           id="a2_lastname"
-                                          type="name"
-                                          v-model="name"
+                                          type="text"
+                                          v-model="lastname"
                                           required></v-text-field>
                                        </v-flex>
                                        <v-flex>
@@ -71,8 +71,8 @@
                                               name="a3_username"
                                               label="User Name"
                                               id="a3_username"
-                                              type="name"
-                                              v-model="name"
+                                              type="text"
+                                              v-model="username"
                                               required></v-text-field>
                                            </v-flex>
                                            <v-flex>
@@ -90,7 +90,7 @@
                                                       label="Phone Number"
                                                       id="a4_phone"
                                                       type="number"
-                                                      v-model="phone"
+                                                      v-model="number"
                                                       required></v-text-field>
                                                    </v-flex>
                                                <v-flex>        
@@ -98,6 +98,7 @@
                                                         :items="gender"
                                                         label="Gender"
                                                         id="a6_gender"
+                                                        v-model="gender"
                                                    ></v-select>
                                                 </v-flex>
                             <v-flex>
@@ -113,7 +114,7 @@
                               If you are registered <a href="login.html">Sign In</a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit">Register</v-btn>
+                              <v-btn color="primary" type="submit" onclick="submitUsers">Register</v-btn>
                             </v-flex>
                           
                           </v-layout>
@@ -140,7 +141,14 @@
   };
   firebase.initializeApp(config);
   // Reference to Firebase database
-  const Users = firebase.database().ref("Users");
+  var Users = firebase.database().ref("Users");
+
+  //Get user  ID
+  firebase.auth().onAuthStateChanged((User) => {
+  if (User) {
+    console.log(User.uid);
+  }
+});
 
   //Save a new user to the database
   var submitUsers = function (){
@@ -153,7 +161,7 @@
     const gender = $("a6_gender").val();
 
 // Push a new user to the database
-  User.push({
+  Users.push({
     "firstname": a1_firstname,
     "lastname": a2_lastname,
     "username": a3_username,
@@ -163,14 +171,7 @@
   });
 };
 
-  var acceptUser = function (Users) {
-    if (User == submitUsers){
-      alert("Successfully Submitted!");
-    }else{
-      alert("You are not a user");
-    }
-  }
-//Load functio when user clicks on the register button
+//Load function when user clicks on the register button
   $(window).load(function () {
     $("#Users").submit(submitUsers);
   });
@@ -184,7 +185,7 @@
         username: '',
         email: '',
         password: '',
-        authUser: null,
+        authUser: '',
         gender: ['Male', 'Female']
       }),
       methods: {
