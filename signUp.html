@@ -139,18 +139,16 @@
   };
   firebase.initializeApp(config);
   // Reference to Firebase database
-  var Users = firebase.database().ref("Users");
-  
+  let db = app.database();
+  let userRef = db.ref('users');
+
    new Vue({
     el: '#app',
     data: () => {
       return {
-        firstname: '',
-        lastname: '',
-        username: '',
-        email: '',
-        password: '',
-        gender: ["Male", "Female"]
+         firebase:{
+            users:userRef
+        },
       }
     },
       methods: {
@@ -158,27 +156,16 @@
           firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         },
         register: function(){
-          firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-            function writeUserData(userId, a1_firstname, a2_lastname, a3_username, a4_email, a5_phone, a6_gender) {
-              firebase.database().ref('Users/' + userId ).set({
-                firstname: a1_firstname,
-                lastname: a2_lastname,
-                username: a3_username,
-                email: a4_email,
-                phone: a5_phone,
-                gender: a6_gender
-              });
-            }
-          )
-        },
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // log
+        console.log(errorMessage);
+      });
+    },
         signOut: function(){
           firebase.auth().signOut
-        },
-        signInWithGoogle () {
-          const provider = new firebase.auth.GoogleAuthProvider()
-            firebase.auth().signInWithPopup(provider)
-              .catch(error => alert('🤕' + error.message))
-              .then(data => console.log(data.user, data.credential.accessToken))
         }
       },
   });
