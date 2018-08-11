@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Secure Tips | Register</title>
+  <title>SecureTips | Login</title>
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
 </head>
 <body>
@@ -15,22 +15,10 @@
     <v-content>
       <v-toolbar color="green" dark>
          <router-link style="text-decoration: none;">
-            <v-btn flat href="./index.html">SecureTips </v-btn>
+            <v-btn flat href="./index.html">SureTips </v-btn>
          </router-link>
         <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
-        <router-link style="text-decoration:none;">
-          <v-btn
-           flat
-           href="./login.html"
-           >Login</v-btn>
-        </router-link>
-        <router-link style="text-decoration:none;">
-          <v-btn
-           flat
-           href="./signUp.html"
-           >Sign Up</v-btn>
-        </router-link>
         <router-link style="text-decoration:none;">
           <v-btn
            flat
@@ -43,83 +31,81 @@
             <v-container fluid>
                     <v-layout row wrap>
                       <v-flex xs12 class="text-xs-center" mt-5>
-                        <h1>Register</h1>
+                        <h1 class="heading">Register</h1>
                       </v-flex>
                       <v-flex xs12 sm6 offset-sm3 mt-3>
-                        <form id="Users">
+                        <v-card>
+                          <v-card-text>
+                            <v-container>
+                        <form>
                           <v-layout column>
-                                <v-flex>
-                                  <v-text-field
-                                    name="a1_firstname"
-                                    label="First Name"
-                                    id="a1_firstname"
-                                    type="text"
-                                    v-model="firstname"
-                                    required></v-text-field>
-                                 </v-flex>
-                                 <v-flex>
-                                        <v-text-field
-                                          name="a2_lastname"
-                                          label="Last Name"
-                                          id="a2_lastname"
-                                          type="text"
-                                          v-model="lastname"
-                                          required></v-text-field>
-                                       </v-flex>
-                                       <v-flex>
-                                            <v-text-field
-                                              name="a3_username"
-                                              label="User Name"
-                                              id="a3_username"
-                                              type="text"
-                                              v-model="username"
-                                              required></v-text-field>
-                                           </v-flex>
-                                           <v-flex>
-                                                <v-text-field
-                                                  name="a4_email"
-                                                  label="Email"
-                                                  id="a4_email"
-                                                  type="email"
-                                                  v-model="email"
-                                                  required></v-text-field>
-                                               </v-flex>
-                                               <v-flex>
-                                                    <v-text-field
-                                                      name="a5_phone"
-                                                      label="Phone Number"
-                                                      id="a4_phone"
-                                                      type="number"
-                                                      required></v-text-field>
-                                                   </v-flex>
-                                               <v-flex>        
-                                                  <v-select
-                                                        :items="gender"
-                                                        label="Gender"
-                                                        id="a6_gender"
-                                                        v-model="gender"
-                                                   ></v-select>
-                                                </v-flex>
+                            <v-flex>
+                              <v-text-field
+                                name="a1_firstname"
+                                label="First Name"
+                                type="name"
+                                id="a1_firstname"
+                                v-model="User.a1_firstname"
+                                required></v-text-field>
+                                </v-flex>
+                            <v-flex>
+                              <v-text-field
+                                name="a2_lastname"
+                                label="Last Name"
+                                type="name"
+                                id="a2_lastname"
+                                v-model="User.a2_lastname"
+                                required></v-text-field>
+                            </v-flex>
+                            <v-text-field
+                                name="a3_lastname"
+                                label="User Name"
+                                type="name"
+                                id="a3_username"
+                                v-model="User.a3_username"
+                                required></v-text-field>
+                            </v-flex>      
+                            <v-flex>
+                              <v-text-field
+                                name="email"
+                                label="Email"
+                                type="email"
+                                id="email"
+                                v-model="email"
+                                required></v-text-field>
+                            </v-flex>
+                            <v-flex>
+                              <v-text-field
+                                name=a5_"phone"
+                                label="Phone Number"
+                                type="phone"
+                                id="User.a5_phone"
+                                v-model="a5_phone"
+                                required></v-text-field>
+                              </v-flex>
                             <v-flex>
                               <v-text-field
                                 name="password"
                                 label="Password"
-                                id="password"
                                 type="password"
+                                id="password"
+                                v-model="password"
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              If you are registered <a href="login.html">Sign In</a>
+                              If are not a user <a href="login.html">Sign in here</a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit" onsubmit="writeUserData">Register</v-btn>
+                              <v-btn color="primary" type="submit">Register</v-btn>
                             </v-flex>
-                          
                           </v-layout>
                         </form>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
+                      </v-container>
+                     </v-card-text>
+                   </v-card>
+                 </v-flex>
+               </v-layout>
+             </v-container>
       </section>   
     </v-content>
   </v-app>
@@ -138,37 +124,131 @@
     messagingSenderId: "704181634415"
   };
   firebase.initializeApp(config);
-  // Reference to Firebase database
-  let db = app.database();
-  let userRef = db.ref('users');
 
-   new Vue({
+  new Vue({
     el: '#app',
-    data: () => {
-      return {
-         firebase:{
-            users:userRef
-        },
+
+  data: {
+    auth: {
+      user: null,
+      email: '',
+      password: '',
+      message: '',
+      userName: '',
+      hasErrors: false
+    }
+  },
+
+  methods: {
+
+    /**
+     * Authenticate the user
+     *
+     * @param object event
+     */
+    login: function (event) {
+      var vm = this;
+      vm.auth.message = '';
+      vm.auth.hasErrors = false;
+
+      if (vm.auth.email === '' || vm.auth.password === '') {
+        alert('Please provide the email and password');
+        return;
       }
+      // Sign-in the user with the email and password
+      firebase.auth().signInWithEmailAndPassword(vm.auth.email, vm.auth.password)
+        .then(function (data) {
+          vm.auth.user = firebase.auth().currentUser;
+        }).catch(function(error) {
+          vm.auth.message = error.message;
+          vm.auth.hasErrors = true;
+        });
     },
-      methods: {
-        signIn: function(){
-          firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        },
-        register: function(){
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // log
-        console.log(errorMessage);
-      });
+
+    /**
+     * Create a new user account
+     * 
+     * @param object event
+     */
+    signUp: function (event) {
+      var vm = this;
+      vm.auth.message = '';
+      vm.auth.hasErrors = false;
+
+      if (vm.auth.email === '' || vm.auth.password === '') {
+        alert('Please provide the email and password');
+        return;
+      }
+
+      // Create a new user in firebase
+      firebase.auth().createUserWithEmailAndPassword(vm.auth.email, vm.auth.password)
+        .then(function (data) {
+          vm.auth.message = 'Successfully created user';
+          vm.auth.user = firebase.auth().currentUser;
+          vm.auth.email = '';
+          vm.auth.password = '';
+        }).catch(function(error) {
+          vm.auth.message = error.message;
+          vm.auth.hasErrors = true;
+        });
     },
-        signOut: function(){
-          firebase.auth().signOut
+
+    /**
+     * Signout the currently logged-in user
+     */
+    signOut: function () {
+      // Signout the user using firebase
+      firebase.auth().signOut()
+        .then(function(error) {
+          this.auth.user = firebase.auth().currentUser;
+          this.auth.message = 'User signed out Successfully';
+        }.bind(this), function (error) {
+          alert('Failed to signout user, try again later');
+        });
+    },
+
+    /**
+     * Dismiss the alert message
+     */
+    dismissAlert: function () {
+      this.auth.message = '';
+      this.auth.hasErrors = false;
+    },
+
+    /**
+     * Display name computed property
+     */
+    displayName: function () {
+      return this.auth.user.a3_username ? 
+        this.auth.user.a3_username : this.auth.user.email;
+    }
+
+  },
+
+  computed: {
+
+    /**
+     * Determines if the user is authenticated
+     *
+     * @return boolean
+     */
+    isAuthenticated: function () {
+      // This function changes the auth.user state when 
+      // the auth status of user changes.
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          this.auth.user = user;
+        } else {
+          this.auth.user = null;
         }
-      },
-  });
+      }.bind(this));
+
+      return (this.auth.user !== null);
+    }
+
+  }
+
+});
  </script>
 </body>
 </html>
