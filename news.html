@@ -74,7 +74,7 @@
         </v-parallax>
       </section>
 
-      <section>
+      <section class="news-list">
         <v-layout
           column
           wrap
@@ -93,11 +93,10 @@
                   <v-card v-for="article in articles">
                     <v-card-titlev-bind:href="article.url" target="_blank">
                         <v-divider></v-divider>
-                        <span class="black--text">England</span><br>
+                        <span v-bind:href="article.url" target="_blank">{{article.title}}</span><br>
                       <div>
-                        <span class="black--text">England</span><br>
-                        <span>Premier League</span><br>
-                        <span>Chelsea VS Huddersfield</span>
+                        <span class="black--text"><i>{{article.author}}</i></span><br>
+                        <span>{{article.description}}</span><br>
                       </div>
                     </v-card-title>
                     <v-divider></v-divider>
@@ -334,11 +333,27 @@
  <script>
    new Vue({
     el: '#app',
-    data () {
-      return {
-        title: 'Your Logo'
-      }
-    }, 
+    name: 'news-list',
+    props: ['espn', '030bc8af1aba45aca5d795211526706e'],
+  data() {
+    return {
+      articles: []
+    };
+  },
+  methods: {
+    updateSource(source) {
+      this.$http
+        .get(`https://newsapi.org/v2/top-headlines?sources=espn&apiKey=030bc8af1aba45aca5d795211526706e`)
+        .then(res => {
+          this.articles = res.data.articles;
+        });
+    }
+  },
+  watch: {
+    source(val) {
+      this.updateSource(val)
+    }
+  }
   })
  </script>
 </body>
