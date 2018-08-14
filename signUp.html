@@ -5,6 +5,7 @@
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
@@ -15,7 +16,7 @@
     <v-content>
       <v-toolbar color="green" dark>
          <router-link style="text-decoration: none;">
-            <v-btn flat href="./index.html">SureTips </v-btn>
+            <v-btn flat href="./index.html">SecureTips </v-btn>
          </router-link>
         <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
@@ -45,7 +46,7 @@
                                 label="First Name"
                                 type="name"
                                 id="a1_firstname"
-                                v-model="User.a1_firstname"
+                                v-model="a1_firstname"
                                 required></v-text-field>
                                 </v-flex>
                             <v-flex>
@@ -54,7 +55,7 @@
                                 label="Last Name"
                                 type="name"
                                 id="a2_lastname"
-                                v-model="User.a2_lastname"
+                                v-model="a2_lastname"
                                 required></v-text-field>
                             </v-flex>
                             <v-text-field
@@ -62,7 +63,7 @@
                                 label="User Name"
                                 type="name"
                                 id="a3_username"
-                                v-model="User.a3_username"
+                                v-model="a3_username"
                                 required></v-text-field>
                             </v-flex>      
                             <v-flex>
@@ -79,7 +80,7 @@
                                 name=a5_"phone"
                                 label="Phone Number"
                                 type="phone"
-                                id="User.a5_phone"
+                                id="a5_phone"
                                 v-model="a5_phone"
                                 required></v-text-field>
                               </v-flex>
@@ -93,10 +94,10 @@
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              If are not a user <a href="login.html">Sign in here</a>
+                              If are not a user <a href="login.html"><b>Sign in here</b></a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit">Register</v-btn>
+                              <v-btn color="primary" type="submit"@click='register'>Register</v-btn>
                             </v-flex>
                           </v-layout>
                         </form>
@@ -125,17 +126,20 @@
   };
   firebase.initializeApp(config);
 
+  var dbRef = firebase.database();
+  var userRef = dbRef.ref('Users');
+
   new Vue({
     el: '#app',
 
   data: {
     auth: {
-      user: null,
       email: '',
       password: '',
-      message: '',
-      userName: '',
-      hasErrors: false
+      a1_firstname: '',
+      a2_lastname: '',
+      a3_username: '',
+      a5_phone: ''
     }
   },
 
@@ -163,6 +167,12 @@
           vm.auth.message = error.message;
           vm.auth.hasErrors = true;
         });
+
+        userRef.push({
+        a1_firstname: $('a1_username').val(),
+        a4_email: $('email').val()
+      })
+      console.log({a1_firstname, a4_email})
     },
 
     /**

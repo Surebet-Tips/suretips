@@ -5,6 +5,7 @@
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" type="text/css" href="./style.css">
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
@@ -15,7 +16,7 @@
     <v-content>
       <v-toolbar color="green" dark>
          <router-link style="text-decoration: none;">
-            <v-btn flat href="./index.html">SureTips </v-btn>
+            <v-btn flat href="./index.html">SecureTips</v-btn>
          </router-link>
         <v-spacer></v-spacer>
       <div class="hidden-sm-and-down">
@@ -35,11 +36,14 @@
     </v-toolbar>
       <section>
             <v-container fluid>
-                    <v-layout row wrap>
-                      <v-flex xs12 class="text-xs-center" mt-5>
-                        <h1 class="heading">Login</h1>
-                      </v-flex>
-                      <v-flex xs12 sm6 offset-sm3 mt-3>
+               <v-layout row wrap>
+                 <v-flex xs12 class="text-xs-center" mt-5>
+                    <h1 class="heading">Login</h1>
+                  </v-flex>
+                  <v-flex xs12 sm6 offset-sm3 mt-3>
+                    <v-card>
+                      <v-card-text>
+                        <v-container>
                         <form @submit.prevent="signIn">
                           <v-layout column>
                             <v-flex>
@@ -61,7 +65,7 @@
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              If are not a user <a href="signUp.html">register here</a>
+                              If are not a user <a href="signUp.html"><b>register here</b></a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
                               <v-btn color="primary" type="submit">Login</v-btn>
@@ -69,9 +73,12 @@
                             </v-flex>
                           </v-layout>
                         </form>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
+                      </v-container>
+                     </v-card-text>
+                   </v-card>
+                 </v-flex>
+              </v-layout>
+           </v-container>
       </section>   
     </v-content>
   </v-app>
