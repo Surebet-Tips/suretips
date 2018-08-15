@@ -15,6 +15,10 @@ body{
 }
 .heading{
     font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-    display: flex;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.login{
+    width: 100%;
 }

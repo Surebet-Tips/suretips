@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  
 </head>
 <body>
  <div id="app">
@@ -162,7 +163,7 @@
                       </v-card>
                 </v-flex>
                 <v-flex xs12 >
-                    <v-card>
+                    <v-card >
                         <v-card-title>
                             <div class="news-list">
                                 <div class="container">
@@ -191,217 +192,7 @@
                         <v-divider></v-divider>
                       </v-card>
                 </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                        <v-card-actions>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 >
-                    <v-card>
-                        <v-card-title>
-                            <div class="news-list">
-                                <div class="container">
-                                  <ul class="media-list">
-                                    <li class="media" v-for="article in articles">
-                                      <div class="media-left">
-                                        <a v-bind:href="article.url" target="_blank">
-                                          <img class="media-object" v-bind:alt="article.description" v-bind:src="article.urlToImage" />
-                                        </a>
-                                        <v-divider></v-divider>
-                                      </div>
-                                      <div class="media-body">
-                                        <h4 class="media-heading">
-                                          <a v-bind:href="article.url" target="_blank">{{article.title}}</a>
-                                        </h4>
-                                        <h5><i>{{article.author}}</i></h5>
-                                        <p>
-                                          {{article.description}}
-                                        </p>
-                                      </div>
-                                    </li>
-                                  </ul>
-                                </div>
-                            </div>
-                        </v-card-title>
-                        <v-divider></v-divider>
-                      </v-card>
-                </v-flex>
+                
               </v-layout>
             </v-container>
           </v-flex>
@@ -508,28 +299,31 @@
  </div>
  <script src="https://unpkg.com/vue/dist/vue.js"></script>
  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1/dist/vue-resource.min.js"></script>
  <script>
    new Vue({
     el: '#app',
-    name: 'app',
-    props: ['ESPN', '030bc8af1aba45aca5d795211526706e'],
+    props: ['bbc-sport', '030bc8af1aba45aca5d795211526706e'],
   data() {
     return {
       articles: []
     };
   },
   methods: {
-    updateSource(source) {
-      this.$http
-        .get(`https://newsapi.org/v2/top-headlines?sources=espn&apiKey=030bc8af1aba45aca5d795211526706e`)
-        .then(res => {
-          this.articles = res.data.articles;
-        });
+    updateSource: function (source) {
+      this.$http.get('https://newsapi.org/v2/top-headlines?sources=bbc-sport' + source + '&apiKey=[030bc8af1aba45aca5d795211526706e]')
+       .then(response => {
+         this.articles = response.data.articles;
+         console.log(article.title);
+       });   
     }
   },
+  created: function () {
+    this.updateSource(this.source);
+  },
   watch: {
-    source(val) {
-      this.updateSource(val)
+    source: function (val) {
+      this.updateSource(val);
     }
   }
   })

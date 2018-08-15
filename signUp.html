@@ -97,7 +97,7 @@
                               If are not a user <a href="login.html"><b>Sign in here</b></a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              <v-btn color="primary" type="submit"@click='register'>Register</v-btn>
+                              <v-btn color="primary" type="submit"@click='signUp'>Register</v-btn>
                             </v-flex>
                           </v-layout>
                         </form>
@@ -133,7 +133,7 @@
     el: '#app',
 
   data: {
-    auth: {
+    userRef: {
       email: '',
       password: '',
       a1_firstname: '',
