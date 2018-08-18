@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SecureTips | Login</title>
+  <title>SecureTips | Register</title>
   <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -94,7 +94,7 @@
                                 required></v-text-field>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
-                              If are not a user <a href="login.html"><b>Sign in here</b></a>
+                              If you are not a user <a href="login.html"><b>Sign in here</b></a>
                             </v-flex>
                             <v-flex class="text-xs-center" mt-5>
                               <v-btn color="primary" type="submit"@click='signUp'>Register</v-btn>
@@ -109,6 +109,15 @@
              </v-container>
       </section>   
     </v-content>
+    <v-footer class="green">
+      <v-layout row wrap align-center>
+        <v-flex xs12>
+          <div class="white--text ml-3">
+             <span class="white--text" href="https://github.com/Daltimore">&copy; 2018 Copyright SecuredTips</a>
+          </div>
+        </v-flex>
+      </v-layout>
+    </v-footer>
   </v-app>
  </div>
  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>

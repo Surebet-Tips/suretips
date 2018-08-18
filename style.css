@@ -2,12 +2,13 @@ body{
     font-family: 'Raleway', sans-serif;
 }
 .about{
-    text-align: justify;
+    text-align: center;
     font-family: 'Raleway', sans-serif;
     margin-left: 100px;
     margin-right: 100px;
     display: flex;
     font-size: 15px;
+    line-height: 200%;
 }
 #app{
     font-family: 'Raleway', sans-serif;
@@ -21,4 +22,7 @@ body{
 }
 .login{
     width: 100%;
+}
+.text{
+    text-align: justify;
 }

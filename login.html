@@ -119,7 +119,11 @@
       }),
       methods: {
         signIn: function(){
-          firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+          firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(function(data){
+            auth.user = firebase.auth().currentUser;
+          }).catch(function(error){
+            auth.message = error.message;
+          })
         },
         register: function(){
           firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
