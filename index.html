@@ -1,276 +1,308 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SecuredTips | Home</title>
-  <link rel="icon" type="image/ico" href="./assets/favicon.ico" sizes="32x32">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">  
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <title>Secured-Tips - Home of tipsers </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.ico" rel="icon">
+  <!--<link href="img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
- <div id="app">
-   <v-app light>
-    <v-content>
-      <v-toolbar color="green" dark>
-        <router-link style="text-decoration: none;">
-        <v-btn flat href="./index.html">SecuredTips </v-btn>
-      </router-link>
-        <v-spacer></v-spacer>
-      <div class="hidden-sm-and-down">
-        <router-link style="text-decoration:none;">
-          <v-btn
-           flat
-           href="./about.html"
-           >ABOUT</v-btn>
-        </router-link>
-        <router-link style="text-decoration:none;">
-          <v-btn
-           flat
-           href="./login.html"
-           >LOGIN</v-btn>
-        </router-link>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <img src="img/logo1.png" class="scrollto">
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
       </div>
-    </v-toolbar>
-      <section>
-        <v-parallax src="assets/container.jpg" height="400">
-          <v-layout
-            column
-            align-center
-            justify-center
-            class="white--text"
-          >
-            <img src="assets/vuetify.png" alt="Vuetify.js" height="200">
-            <h1 class="whie--text mb-2 display-1 text-xs-center" style="color: #222222; font-weight: 700;"> SecuredTips</h1>
-           <!--<div class="subheading mb-3 text-xs-center" style="color:black;">The only sure thing about luck is
-              that it will change</div>-->
-              
-            <v-layout row justify-space-around>
-             <v-flex xs12 sm6>
-              <v-btn
-                class="green"
-                dark
-                href="./chat.html"
-              >
-              Chat Forum
-            </v-btn>
-            </v-flex>
-            <v-flex xs12 sm6>
-            <v-btn
-            class="green"
-            dark
-            href="./tips.html"
-          >
-          Free Tips
-        </v-btn>
-      </v-flex>
-      <v-flex xs12 sm6>
-        <v-btn
-        class="green"
-        dark
-        href="./news.html"
-      >
-      Soccer News
-    </v-btn>
-  </v-flex>
-          </v-layout>
-        </v-parallax>
-      </section>
 
-      <section>
-        <v-layout
-          column
-          wrap
-          class="my-5"
-          align-center
-        >
-          <v-flex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
-              <h2 class="headline">Our Services</h2>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+
+    <div class="intro-text">
+      <h2>Welcome to Secured-Tips</h2>
+      <p>Home of soccer tipsers</p>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+
+    <div class="product-screens">
+
+      <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
+        <img src="img/screen-1.jpeg" alt="">
+      </div>
+
+      <div class="product-screen-2 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.6s">
+        <img src="img/screen-2.jpeg" alt="">
+      </div>
+
+      <div class="product-screen-3 wow fadeInUp" data-wow-duration="0.6s">
+        <img src="img/screen-3.jpeg" alt="">
+      </div>
+
+    </div>
+
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about" class="section-bg">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">About Us</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 about-img wow fadeInLeft">
+            <img src="img/betting.jpg" alt="">
+          </div>
+
+          <div class="col-lg-6 content wow fadeInRight">
+          <p class="secuure">
+            <b>Secured Tips</b> is a trusted sport platform that provides the 3 core services: Soccer news, Sure football prediction, and Punter’s Forum.
+
+            The news on our site/app are aggregated from the top 10 sport news sites in the word. Get instant news on the latest transfers, match highlight, player performance, and other analysis. 
+            
+            Sure prediction on our platform are well analysed tips from our 5-star punters. Betting is a risk, so we take our time to analyse each tips to ensure profit. Our Daily Tips are completely free and they deliver more than 80% of the time. If you want games with 95% accuracy, you can join our VIP where we provide sure tips from expert punters to ensure winnings for at least 5 days in each week. This is where you make maximum.
+            
+            In addition, our Punter’s Forum is where you meet the best punters. You can join today for free and get paid for your prediction while you also benefit from the prediction other expert punters. Keep track on your winning and share the good news.
+            
+            Enjoy consistent winnings. You are welcome.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Features Section
+    ============================-->
+    <section id="more-features" class="section-bg">
+      <div class="container">
+
+        <div class="section-header">
+          <h3 class="section-title">What We Offer</h3>
+          <span class="section-divider"></span>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-social-buffer-outline"></i></div>
+              <h4 class="title"><a href="">Betting Tips</a></h4>
+              <p class="description">Sure prediction on our platform are well analysed tips from our 5-star punters. Betting is a risk, so we take our time to analyse each tips to ensure profit. Our Daily Tips are completely free and they deliver more than 80% of the time. If you want games with 95% accuracy. </p>
             </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap align-center>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <div style="color: #2E7D32">
-                        <i class="fas fa-tasks fa-3x"></i>
-                      </div>  
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Betting Tips</div>
-                    </v-card-title>
-                    <v-card-text class="text">
-                        Sure prediction on our platform are well analysed tips from our 5-star punters. Betting is a risk, so we take our time to analyse each tips to ensure profit. Our Daily Tips are completely free and they deliver more than 80% of the time. If you want games with 95% accuracy.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                    <v-card class="elevation-0 transparent">
-                        <v-card-text class="text-xs-center">
-                          <div style="color: #2E7D32">
-                            <i class="fab fa-wpforms fa-3x"></i>
-                          </div>  
-                        </v-card-text>
-                        <v-card-title primary-title class="layout justify-center">
-                          <div class="headline text-xs-center">Punter’s Forum</div>
-                        </v-card-title>
-                        <v-card-text  class="text">
-                          Punter’s Forum is where you meet the best punters. You can join today for free and get paid for your prediction while you also benefit from the prediction other expert punters. Keep track on your winning and share the good news.
-                        </v-card-text>
-                      </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <div style="color: #2E7D32">
-                        <i class="far fa-newspaper fa-3x"></i>
-                      </div>  
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">News</div>
-                    </v-card-title>
-                    <v-card-text class="text">
-                      The news on our site/app are aggregated from the top 10 sport news sites in the word. Get instant news on the latest transfers, match highlights, player performance, head to head analysis more updates are comprehensive coverage of all your major sporting events on results, fixtures, logs.  
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
-        </v-layout>
-      </section>
+          </div>
 
-      <section>
-        <v-parallax src="assets/section.jpg" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">Now you can chat with tipsters</div>
-            <em>Ranging from normal tipsters to Vip tipsters</em>
-            <v-btn
-              class="green"
-              dark
-              large
-              href="./chat.html"
-            >
-              Dive In
-            </v-btn>
-          </v-layout>
-        </v-parallax>
-      </section>
-
-      <section>
-        <v-container grid-list-xl>
-          <v-layout row wrap justify-center class="my-5">
-            <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">SecuredTips</div>
-                </v-card-title>
-                <v-card-text>
-                  Secured Tips is a trusted sport platform that provides the 3 core services: Soccer news, Sure football prediction, and Punter’s Forum.
-                </v-card-text>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 sm4>
-                <v-card class="elevation-0 transparent">
-                  <v-card-title primary-title class="layout justify-center">
-                    <div class="headline">Sign up to our newsletter</div>
-                  </v-card-title>
-                  <v-card-text>
-                            <v-flex>
-                              <v-textarea
-                                outline
-                                name="input-7-4"
-                                label=""
-                                value=""
-                              ></v-textarea>
-                            </v-flex>
-                  </v-card-text>
-                </v-card>
-              </v-flex>
-            <v-flex xs12 sm4>
-              <v-card class="elevation-0 transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Reach out to us</div>
-                </v-card-title>
-                <v-card-text>
-                  We are available round the clock, you can reach us anytime, anyday
-                </v-card-text>
-                <v-list class="transparent" xs6 sm2 >
-                  <v-list-tile coloumn>
-                    <v-list-tile-action>
-                      <div style="color: #2E7D32">
-                      <i class="fas fa-phone"></i>
-                      </div>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>0810-336-9150</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile>
-                    <v-list-tile-action xs6 sm2>
-                        <div style="color: #2E7D32">
-                            <i class="fab fa-facebook-f"></i>
-                        </div>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>0810-336-9150</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                  <v-list-tile>
-                    <v-list-tile-action>
-                      <!--<v-icon class="blue--text text--lighten-2">place</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>Owerri, Imo State</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>-->
-                  <v-list-tile>
-                    <v-list-tile-action xs6 sm2>
-                      <div style="color: #2E7D32">
-                        <i class="fas fa-envelope"></i>
-                      </div>  
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                      <v-list-tile-title>mendie@suretips.com</v-list-tile-title>
-                    </v-list-tile-content>
-                  </v-list-tile>
-                </v-list>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </section>
-
-      <v-footer class="green">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-3">
-               <span class="white--text" href="https://github.com/Daltimore">&copy; 2018 Copyright SureTips</a>
+          <div class="col-lg-4">
+            <div class="box wow fadeInRight">
+              <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+              <h4 class="title"><a href="">Punter's Forum</a></h4>
+              <p class="description">Punter’s Forum is where you meet the best punters. You can join today for free and get paid for your prediction while you also benefit from the prediction other expert punters. Keep track on your winning and share the good news. </p>
             </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
-    </v-content>
-  </v-app>
- </div>
- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
- <script src="https://unpkg.com/vue/dist/vue.js"></script>
- <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
- <script>
-   new Vue({
-    el: '#app',
-    data () {
-      return {
-        title: 'Your Logo'
-      }
-    }, 
-  })
- </script>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="box wow fadeInLeft">
+              <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+              <h4 class="title"><a href="">Soccer News</a></h4>
+              <p class="description">The news on our site/app are aggregated from the top 10 sport news sites in the word. Get instant news on the latest transfers, match highlights, player performance, head to head analysis more updates are comprehensive coverage of all your major sporting events on results, fixtures, logs. </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- #more-features -->
+
+    <section id="clients">
+      <div class="container">
+
+        <div class="row wow fadeInUp" style="text-align:center !important;">
+
+          <div class="col-block stats__col ">
+            <div class="stats__count">5000+</div>
+            <h5>Online Users</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__count">100%</div>
+            <h5>Assurance</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__count">100%</div>
+            <h5>Reliability</h5>
+        </div>
+        <div class="col-block stats__col">
+            <div class="stats__count">5000+</div>
+            <h5>Tipsters</h5> 
+        </div>
+        </div>
+      </div>
+    </section><!-- #more-features -->
+
+    <!--==========================
+      Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3 class="cta-title">Get Our Android app</h3>
+            <p class="cta-text"> Get securedtips Android app on play store</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="https://play.google.com/store/apps/details?id=secured.tips"><img src="/img/android.jpg" /></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #call-to-action -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container">
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-4 col-md-4">
+            <div class="contact-about">
+              <h3>Secured Tips</h3>
+              <p>
+                The news on our site/app are aggregated from the top 10 sport news sites in the word. Get instant news on the latest transfers, match highlight, player performance, and other analysis.</p>
+              <div class="social-links">
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="info">
+              <div>
+                <i class="ion-ios-email-outline"></i>
+                <p>info@securedtips.com</p>
+              </div>
+
+              <div>
+                <i class="ion-ios-telephone-outline"></i>
+                <p>+234 803 922 3654</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-8">
+            <div class="form">
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-row">
+                  <div class="form-group col-lg-6">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                    <div class="validation"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            2018 &copy; Copyright <strong>SecuredTips</strong>. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Main Javascript File -->
+  <script src="js/main.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/scripts.js"></script>
+
 </body>
 </html>
